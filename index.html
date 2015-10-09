@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Music</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/site.css">
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      System.config({ "paths": { "*": "dist-client/*.js" } });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        System.import('core-js').then(function () {
+          System.import('main').then(function () {
+            System.import('bootstrap/css/bootstrap.css!').then(function () {
+              document.getElementById('loadingSplash').style.display = 'none';
+              document.getElementById('content').style.display = 'block';
+            });
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="loadingSplash" style="display: block">
+      Loading...
+    </div>
+    <div id="content" style="display: none">
+      <button id="btn1" class="btn btn-success">One</button>
+      <button id="btn2" class="btn btn-success">Two</button>
+      <button id="btn3" class="btn btn-success">Three</button>
+    </div>
+  </body>
+</html>
